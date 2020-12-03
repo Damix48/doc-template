@@ -1,0 +1,35 @@
+\section*{Diario delle modifiche}
+
+\newcommand*\mytablecontents{}
+\foreach \x [count=\ni] in \modifiche
+{
+    \foreach \y in \x
+    {
+        \xappto\mytablecontents{\y&}
+    }
+    \gappto\mytablecontents{\hline}
+}
+
+% Impostazioni della tabella
+\tabulinesep = 2mm % padding
+\taburowcolors 2{pari .. dispari} % colori delle righe
+\begin{longtabu}{|X[-1,c]|X[-1,c]|X[1,c]|X[0.6,c]|X[1.3]|} % larghezza delle colonne
+
+\hline
+\rowcolor{header} % colore dell'header
+
+% header
+\textbf{Versione} & \textbf{Data} & \textbf{Nominativo}             & \textbf{Ruolo}         & \multicolumn{1}{c|}{\textbf{Descrizione}}  \\
+
+\hline
+\endfirsthead
+\endhead
+
+\mytablecontents
+
+\end{longtabu}
+
+
+
+
+    
